@@ -1,0 +1,54 @@
+.elements {
+  max-width: 880px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+.elements__element {
+  max-width: 282px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1.5px solid rgba(0, 0, 0, 1);
+  border-radius: 12px;
+}
+
+.elements__paragraph {
+  font-family: "Inter";
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  margin-top: 25px;
+  margin-bottom: 31px;
+}
+
+.elements__image {
+  width: 100%;
+}
+
+.elements__division {
+  margin: auto;
+  max-width: 260px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.elements__heart {
+  background-image: url("../images/Corazon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 21px;
+  border: none;
+  background-color: rgba(255, 255, 255, 1);
+  min-height: 19px;
+}
+
+.elements__heart:hover {
+  background-image: url("../images/CorazonHover.svg");
+}
+
+.elements__heart:active {
+  background-image: url("../images/CorazonActive.png");
+}
