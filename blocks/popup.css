@@ -109,9 +109,6 @@
   transform: scale(0.9);
 }
 
-.popup_opened {
-}
-
 @media screen and (max-width: 525px) {
   .popup {
     max-width: 285px;
