@@ -109,6 +109,17 @@
   transform: scale(0.9);
 }
 
+.popup__opened {
+  display: none;
+}
+
+.popup__disabled {
+  background-color: whitesmoke;
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: gray;
+}
+
 @media screen and (max-width: 525px) {
   .popup {
     max-width: 285px;
