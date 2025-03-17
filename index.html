@@ -35,7 +35,7 @@
                   <p class="profile__name">Dagoberto Najera</p>
                   <p class="profile__hobbies">Esplorador, filantropo</p>
                 </div>
-                <button class="profile__button-edit"></button>
+                <button id="button" class="profile__button-edit"></button>
               </article>
             </li>
           </ul>
@@ -50,7 +50,7 @@
             />
             <div class="elements__division">
               <p class="elements__paragraph">Valle de Yosemite</p>
-              <button class="elements__heart"></button>
+              <button type="button" class="elements__heart"></button>
             </div>
           </article>
           <article class="elements__element">
@@ -62,7 +62,7 @@
 
             <div class="elements__division">
               <p class="elements__paragraph">Lago Louise</p>
-              <button class="elements__heart"></button>
+              <button type="button" class="elements__heart"></button>
             </div>
           </article>
           <article class="elements__element">
@@ -74,7 +74,7 @@
 
             <div class="elements__division">
               <p class="elements__paragraph">Montañas Calvas</p>
-              <button class="elements__heart"></button>
+              <button type="button" class="elements__heart"></button>
             </div>
           </article>
           <article class="elements__element">
@@ -86,7 +86,7 @@
 
             <div class="elements__division">
               <p class="elements__paragraph">Latemar</p>
-              <button class="elements__heart"></button>
+              <button type="button" class="elements__heart"></button>
             </div>
           </article>
           <article class="elements__element">
@@ -97,7 +97,7 @@
             />
             <div class="elements__division">
               <p class="elements__paragraph">Vanois National...</p>
-              <button class="elements__heart"></button>
+              <button type="button" class="elements__heart"></button>
             </div>
           </article>
           <article class="elements__element">
@@ -108,10 +108,35 @@
             />
             <div class="elements__division">
               <p class="elements__paragraph">Lago di Braies</p>
-              <button class="elements__heart"></button>
+              <button type="button" class="elements__heart"></button>
             </div>
           </article>
         </section>
+        <div class="popup popup_opened">
+          <form class="popup__content">
+            <h2 class="popup__title">Editar perfil</h2>
+            <div class="popup__column">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                class="popup__name"
+                placeholder="Nombre"
+              />
+              <input
+                id="info"
+                name="info"
+                type="text"
+                class="popup__info"
+                placeholder="Acerca de mí"
+              />
+              <button id="save" type="button" class="popup__save">
+                Guardar
+              </button>
+            </div>
+          </form>
+          <button type="submit" class="popup__close"></button>
+        </div>
       </main>
       <footer class="footer">
         <p class="footer__copyright">© 2024 Around The U.S.</p>

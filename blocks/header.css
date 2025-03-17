@@ -9,3 +9,13 @@
 .header__vector {
   max-width: 173px;
 }
+
+@media screen and (max-width: 525px) {
+  .header__vector {
+    max-width: 126px;
+  }
+
+  .header {
+    padding-bottom: 32px;
+  }
+}

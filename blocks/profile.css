@@ -84,3 +84,86 @@
 .profile__button-edit:hover {
   background-image: url("../images/EditButtongris.png");
 }
+
+@media screen and (max-width: 700px) {
+  .profile {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 40px;
+  }
+
+  .profile__avatar {
+    border-radius: 50%;
+    max-width: 120px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .profile__info {
+    display: flex;
+    max-width: 400px;
+    align-items: baseline;
+  }
+
+  .profile__name {
+    max-width: 350px;
+  }
+
+  .profile__hobbies {
+    max-width: 350px;
+  }
+
+  .profile__button-edit {
+    min-height: 20px;
+    min-width: 20px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .profile {
+    margin-top: 42px;
+  }
+  .profile__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile__info {
+    max-width: 282px;
+    justify-content: center;
+  }
+
+  .profile__group {
+    gap: 26px;
+    margin: 0 auto 36px;
+  }
+
+  .profile__name {
+    max-width: 196px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    text-align: center;
+  }
+
+  .profile__hobbies {
+    max-width: 282px;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  .profile__button-edit {
+    min-height: 18px;
+    min-width: 18px;
+  }
+
+  .profile__add-button {
+    min-width: 282px;
+  }
+}
