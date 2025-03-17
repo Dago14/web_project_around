@@ -20,10 +20,10 @@ ValueName.addEventListener("input", checkInputs);
 ValueInfo.addEventListener("input", checkInputs);
 
 function showpopup() {
-  popup.classList.remove("popup__opened");
+  popup.classList.remove("popup_opened");
 }
 function hidepopup() {
-  popup.classList.add("popup__opened");
+  popup.classList.add("popup_opened");
 }
 
 function showresults() {
@@ -33,7 +33,7 @@ function showresults() {
   if (nameValue != "" && infoValue != "") {
     TextName.textContent = nameValue;
     TextInfo.textContent = infoValue;
-    popup.classList.add("popup__opened");
+    popup.classList.add("popup_opened");
   } else {
     popup.classList.remove("popup__disabled");
   }
