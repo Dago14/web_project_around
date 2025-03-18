@@ -20,6 +20,9 @@
   line-height: 100%;
   margin-top: 25px;
   margin-bottom: 31px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .elements__image {
