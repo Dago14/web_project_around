@@ -12,21 +12,17 @@ let ValueInfo = content.querySelector("#info");
 let TextName = content.querySelector(".profile__name");
 let TextInfo = content.querySelector(".profile__hobbies");
 
-buttonedit.addEventListener("click", showpopup);
-buttonclose.addEventListener("click", hidepopup);
-buttonsave.addEventListener("click", showresults);
-
-ValueName.addEventListener("input", checkInputs);
-ValueInfo.addEventListener("input", checkInputs);
-
-function showpopup() {
+buttonedit.addEventListener("click", () => {
+  ValueName.value = TextName.textContent;
+  ValueInfo.value = TextInfo.textContent;
   popup.classList.remove("popup_opened");
-}
-function hidepopup() {
-  popup.classList.add("popup_opened");
-}
+});
 
-function showresults() {
+buttonclose.addEventListener("click", () => {
+  popup.classList.add("popup_opened");
+});
+
+buttonsave.addEventListener("click", () => {
   let nameValue = ValueName.value.trim();
   let infoValue = ValueInfo.value.trim();
 
@@ -35,9 +31,12 @@ function showresults() {
     TextInfo.textContent = infoValue;
     popup.classList.add("popup_opened");
   } else {
-    popup.classList.remove("popup__disabled");
+    popup.classList.rXemove("popup__disabled");
   }
-}
+});
+
+ValueName.addEventListener("input", checkInputs);
+ValueInfo.addEventListener("input", checkInputs);
 
 function checkInputs() {
   let nameValue = ValueName.value.trim();
