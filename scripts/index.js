@@ -31,7 +31,7 @@ buttonsave.addEventListener("click", () => {
     TextInfo.textContent = infoValue;
     popup.classList.add("popup_opened");
   } else {
-    popup.classList.rXemove("popup__disabled");
+    popup.classList.remove("popup__disabled");
   }
 });
 
