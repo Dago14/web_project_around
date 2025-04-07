@@ -39,8 +39,9 @@
               </article>
             </li>
           </ul>
-          <button class="profile__add-button"></button>
+          <button id="button-add" class="profile__add-button"></button>
         </section>
+
         <section class="elements"></section>
 
         <template id="template">
@@ -50,13 +51,18 @@
               <p class="elements__paragraph"></p>
               <button type="button" class="elements__heart"></button>
             </div>
+            <button
+              id="button-trash"
+              type="button"
+              class="elements__trash"
+            ></button>
           </article>
         </template>
 
-        <div class="popup popup_opened">
+        <section class="popup popup_opened">
           <form class="popup__content">
             <h2 class="popup__title">Editar perfil</h2>
-            <div class="popup__column">
+            <aside class="popup__column">
               <input
                 id="name"
                 name="name"
@@ -78,10 +84,48 @@
               >
                 Guardar
               </button>
-            </div>
+            </aside>
           </form>
-          <button id="button-close" type="submit" class="popup__close"></button>
-        </div>
+          <button id="button-close" type="button" class="popup__close"></button>
+        </section>
+
+        <section class="popup-add popup-add_opened">
+          <div class="popup-add__position">
+            <form class="popup-add__content">
+              <h2 class="popup-add__newplace">Nuevo lugar</h2>
+              <aside class="popup-add__column">
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  class="popup-add__name"
+                  placeholder="Titulo"
+                  required
+                />
+                <input
+                  id="url"
+                  name="url"
+                  type="url"
+                  class="popup-add__url"
+                  placeholder="Enlace a la imagen"
+                  required
+                />
+                <button
+                  id="button-addinfo"
+                  type="button"
+                  class="popup-add__save"
+                >
+                  Crear
+                </button>
+              </aside>
+            </form>
+            <button
+              id="button-add-close"
+              type="button"
+              class="popup-add__close"
+            ></button>
+          </div>
+        </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&#169; 2024 Around The U.S.</p>
