@@ -72,5 +72,10 @@
 }
 
 .elements__heart:active {
+  transform: scale(0.9);
+}
+
+.elements__heart_like {
+  border: none;
   background-image: url("../images/CorazonActive.png");
 }

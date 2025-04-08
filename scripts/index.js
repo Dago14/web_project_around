@@ -14,9 +14,6 @@ let buttoncloseadd = content.querySelector("#button-add-close");
 //Logica para agg las nuevas cartas
 let buttonsaveadd = content.querySelector("#button-addinfo");
 
-let titlevalue = content.querySelector("#title");
-let urlvalue = content.querySelector("#url");
-
 const datos = [
   {
     name: "Valle de Yosemite",
@@ -45,17 +42,30 @@ const datos = [
 ];
 
 datos.forEach((dato) => {
+  addcard(dato);
+});
+
+function addcard(dato) {
   let clon = template.content.cloneNode(true);
   let paragraph = clon.querySelector(".elements__paragraph");
   let image = clon.querySelector(".elements__image");
   let alt = clon.querySelector(".elements__image");
+  let buttonlike = clon.querySelector("#likebutton");
+  let buttontrash = clon.querySelector("#button-trash");
 
   paragraph.textContent = dato.name;
   image.src = dato.link;
   alt.alt = dato.name;
+  elements.prepend(clon); // agrega a todos
 
-  elements.appendChild(clon); // agrega a todos
-});
+  buttonlike.addEventListener("click", () => {
+    buttonlike.classList.toggle("elements__heart_like");
+  });
+
+  buttontrash.addEventListener("click", (evt) => {
+    evt.target.closest(".elements__element").remove();
+  });
+}
 
 // Value
 
@@ -70,6 +80,24 @@ buttonedit.addEventListener("click", () => {
   ValueName.value = TextName.textContent;
   ValueInfo.value = TextInfo.textContent;
   popup.classList.remove("popup_opened");
+});
+
+buttonsaveadd.addEventListener("click", (evt) => {
+  evt.preventDefault(); // quita el actualizar
+  const titlevalue = document.querySelector("#title");
+  const urlvalue = document.querySelector("#url");
+
+  if (titlevalue.value !== "" && urlvalue.value !== "") {
+    let name = titlevalue.value;
+    let link = urlvalue.value;
+    /*
+dato = {name: titlevalue.value , link: urlvalue.value}
+*/
+    addcard({ name, link }); //Construccion
+    titlevalue.value = "";
+    urlvalue.value = "";
+    popupadd.classList.add("popup-add_opened");
+  }
 });
 
 buttonclose.addEventListener("click", () => {
@@ -95,25 +123,6 @@ buttonadd.addEventListener("click", () => {
 
 buttoncloseadd.addEventListener("click", () => {
   popupadd.classList.add("popup-add_opened");
-});
-
-buttonsaveadd.addEventListener("click", (evt) => {
-  evt.preventDefault(); // quita el actualizar
-
-  let clon = template.content.cloneNode(true);
-  let paragraph = clon.querySelector(".elements__paragraph");
-  let image = clon.querySelector(".elements__image");
-  let alt = clon.querySelector(".elements__image");
-
-  if (titlevalue.value !== "" && urlvalue.value !== "") {
-    paragraph.textContent = titlevalue.value;
-    image.src = urlvalue.value;
-    alt.alt = titlevalue.value;
-    popupadd.classList.add("popup-add_opened");
-    elements.prepend(clon); // agrega al principio de la lista
-    titlevalue.value = "";
-    urlvalue.value = "";
-  }
 });
 
 ValueName.addEventListener("input", checkInputs);
