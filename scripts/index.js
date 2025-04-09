@@ -73,12 +73,14 @@ function addcard(dato) {
 
   let popup_image = document.querySelector(".popup-image");
   let text = document.querySelector(".popup-image__name");
+  let url = document.querySelector(".popup-image__image");
   let alter = document.querySelector(".popup-image__image");
 
   image.addEventListener("click", () => {
     popup_image.classList.toggle("popup-image_opened");
     text.textContent = dato.name;
-    alter.src = dato.link;
+    url.src = dato.link;
+    alter.textContent = dato.name;
   });
 
   let button_close_image = document.querySelector("#button-image-close");
