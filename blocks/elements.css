@@ -46,6 +46,7 @@
   height: 282px;
   width: 282px;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .elements__division {
@@ -67,7 +68,7 @@
   min-height: 19px;
 }
 
-.elements__heart:hover {
+.elements__heart_hover:hover {
   background-image: url("../images/CorazonHover.svg");
 }
 

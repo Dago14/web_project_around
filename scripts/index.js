@@ -59,11 +59,32 @@ function addcard(dato) {
   elements.prepend(clon); // agrega a todos
 
   buttonlike.addEventListener("click", () => {
+    if (buttonlike.classList.contains("elements__heart_hover")) {
+      buttonlike.classList.remove("elements__heart_hover");
+    } else {
+      buttonlike.classList.add("elements__heart_hover");
+    }
     buttonlike.classList.toggle("elements__heart_like");
   });
 
   buttontrash.addEventListener("click", (evt) => {
     evt.target.closest(".elements__element").remove();
+  });
+
+  let popup_image = document.querySelector(".popup-image");
+  let text = document.querySelector(".popup-image__name");
+  let alter = document.querySelector(".popup-image__image");
+
+  image.addEventListener("click", () => {
+    popup_image.classList.toggle("popup-image_opened");
+    text.textContent = dato.name;
+    alter.src = dato.link;
+  });
+
+  let button_close_image = document.querySelector("#button-image-close");
+
+  button_close_image.addEventListener("click", () => {
+    popup_image.classList.add("popup-image_opened");
   });
 }
 
