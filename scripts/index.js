@@ -80,7 +80,7 @@ function addcard(dato) {
     popup_image.classList.toggle("popup-image_opened");
     text.textContent = dato.name;
     url.src = dato.link;
-    alter.textContent = dato.name;
+    alter.alt = dato.name;
   });
 
   let button_close_image = document.querySelector("#button-image-close");
