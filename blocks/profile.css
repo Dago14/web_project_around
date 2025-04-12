@@ -124,10 +124,6 @@
   .profile {
     margin-top: 42px;
   }
-  .profile__group {
-    display: flex;
-    flex-direction: column;
-  }
 
   .profile__info {
     max-width: 282px;
@@ -137,6 +133,8 @@
   .profile__group {
     gap: 26px;
     margin: 0 auto 36px;
+    display: flex;
+    flex-direction: column;
   }
 
   .profile__name {
