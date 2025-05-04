@@ -46,7 +46,6 @@ const resetValidation = () => {
     inputs.forEach((input) => {
       input.addEventListener("input", () => {
         let popuperror = popupform.querySelector("#" + input.id + "-error");
-        console.log(input);
 
         if (!input.validity.valid) {
           popuperror.textContent = input.validationMessage;
