@@ -1,5 +1,4 @@
 const resetValidation = () => {
-  let popupforms = document.querySelectorAll(".popup-add__content");
   let popupcloses = document.querySelectorAll(".popup-add");
   let popupclose_image = document.querySelector(".popup-image");
 
@@ -24,37 +23,6 @@ const resetValidation = () => {
           popup.classList.add("popup-image_opened");
         }
       }
-    });
-  });
-
-  popupforms.forEach((popupform) => {
-    let inputs = popupform.querySelectorAll(".popup-add__input");
-    let submitButton = popupform.querySelector(".popup-add__save");
-
-    const toggleButtonState = () => {
-      const allValid = Array.from(inputs).every(
-        (input) => input.validity.valid
-      );
-      submitButton.disabled = !allValid;
-      if (allValid) {
-        submitButton.classList.remove("popup-add__save_disabled");
-      } else {
-        submitButton.classList.add("popup-add__save_disabled");
-      }
-    };
-
-    inputs.forEach((input) => {
-      input.addEventListener("input", () => {
-        let popuperror = popupform.querySelector("#" + input.id + "-error");
-
-        if (!input.validity.valid) {
-          popuperror.textContent = input.validationMessage;
-        } else {
-          popuperror.textContent = "";
-        }
-
-        toggleButtonState();
-      });
     });
   });
 };

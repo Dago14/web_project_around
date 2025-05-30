@@ -1,52 +1,31 @@
 import { resetValidation } from "./validation.js";
-
+import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
 resetValidation();
 
-let content = document.querySelector(".content");
-let buttonedit = content.querySelector("#button-edit"); //quitar
-let popup = content.querySelector("#popup-add-profile"); // quitar
-let buttonclose = content.querySelector("#button-close");
-let buttonsave = content.querySelector("#button-save");
-let elements = content.querySelector(".elements");
-let template = content.querySelector("#template");
+import {
+  content,
+  buttonedit,
+  popup,
+  buttonclose,
+  buttonsave,
+  elements,
+  buttonadd,
+  popupadd,
+  buttoncloseadd,
+  buttonsaveadd,
+  datos,
+} from "./utils.js";
 
-//Botones del popup agregar
-let buttonadd = content.querySelector("#button-add");
-let popupadd = content.querySelector("#popup-add-place");
-let buttoncloseadd = content.querySelector("#button-add-close");
+const validarProfile = new FormValidator("#edit-profile");
+validarProfile.enableValidation();
 
-//Logica para agg las nuevas cartas
-let buttonsaveadd = content.querySelector("#button-addinfo");
-
-const datos = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-  },
-];
+const validarPlace = new FormValidator("#edit-place");
+validarPlace.enableValidation();
 
 datos.forEach((dato) => {
-  addcard(dato);
+  let elementscard = new Card(dato, "#template");
+  elements.prepend(elementscard.generateCard());
 });
 
 function addcard(dato) {
@@ -126,6 +105,7 @@ dato = {name: titlevalue.value , link: urlvalue.value}
     titlevalue.value = "";
     urlvalue.value = "";
     popupadd.classList.add("popup-add_opened");
+    buttonsaveadd.classList.add("popup-add__save_disabled");
   }
 });
 
@@ -137,7 +117,7 @@ buttonclose.addEventListener("click", () => {
 });
 
 buttonsave.addEventListener("click", (evt) => {
-  evt.preventDefault(evt);
+  evt.preventDefault();
   let ValueName = content.querySelector("#profile-name");
   let ValueInfo = content.querySelector("#profile-info");
   let nameValue = ValueName.value.trim();
