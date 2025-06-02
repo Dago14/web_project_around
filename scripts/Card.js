@@ -1,3 +1,7 @@
+const popup_image = document.querySelector(".popup-image");
+const text = document.querySelector(".popup-image__name");
+const url = document.querySelector(".popup-image__image");
+
 export class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
@@ -46,6 +50,12 @@ export class Card {
     this._buttonlike.classList.toggle("elements__heart_like");
   }
 
+  _Image() {
+    popup_image.classList.remove("popup-image_opened");
+    text.textContent = this._name;
+    url.src = this._image;
+    url.alt = this._name;
+  }
   _setEventListeners() {
     this._buttonlike.addEventListener("click", () => {
       this._LikeToggle();
@@ -54,5 +64,12 @@ export class Card {
     this._buttontrash.addEventListener("click", (evt) => {
       this._Trash(evt);
     });
+
+    this._imagename.addEventListener("click", () => {
+      this._Image();
+    });
   }
+
+  //Coloque un metodo priv por mientras para que abra el popup desde la card
+  // ya que no encontre otra forma mas que de esta forma por mientras
 }

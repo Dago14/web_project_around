@@ -63,50 +63,51 @@
           </template>
         </section>
 
-
         <section id="popup-add-profile" class="popup-add popup-add_opened">
           <div class="popup-add__position">
             <form id="edit-profile" class="popup-add__content" novalidate>
               <h2 class="popup-add__newplace">Editar Perfil</h2>
               <aside class="popup-add__column">
                 <label class="popup-add__field">
-                   <input
-                  class="popup-add__input popup-add__name"
-                  id="profile-name"
-                  name="name"
-                  type="text"
-                  placeholder="Nombre"
-                  minlength="2"
-                  maxlength="40"
-                  required
+                  <input
+                    class="popup-add__input popup-add__name"
+                    id="profile-name"
+                    name="name"
+                    type="text"
+                    placeholder="Nombre"
+                    minlength="2"
+                    maxlength="40"
+                    required
                   />
-                  <span class="popup-add__error popup-add__error_visible" id="profile-name-error"></span>
+                  <span
+                    class="popup-add__error popup-add__error_visible"
+                    id="profile-name-error"
+                  ></span>
                 </label>
                 <label class="popup-add__field">
                   <input
-                  class="popup-add__input popup-add__url"
-                  id="profile-info"
-                  name="info"
-                  type="text"
-                  placeholder="Acerca de mí"
-                  minlength="2"
-                  maxlength="200"
-                  required
-                />
-                <span class="popup-add__error popup-add__error_visible" id="profile-info-error"></span>
+                    class="popup-add__input popup-add__url"
+                    id="profile-info"
+                    name="info"
+                    type="text"
+                    placeholder="Acerca de mí"
+                    minlength="2"
+                    maxlength="200"
+                    required
+                  />
+                  <span
+                    class="popup-add__error popup-add__error_visible"
+                    id="profile-info-error"
+                  ></span>
                 </label>
 
-                <button
-                id="button-save"
-                  type="submit"
-                  class="popup-add__save"
-                >
+                <button id="button-save" type="submit" class="popup-add__save">
                   Guardar
                 </button>
               </aside>
             </form>
             <button
-            id="button-close"
+              id="button-close"
               type="button"
               class="popup-add__close"
             ></button>
@@ -118,31 +119,37 @@
             <form id="edit-place" class="popup-add__content" novalidate>
               <h2 class="popup-add__newplace">Nuevo lugar</h2>
               <aside class="popup-add__column">
-                <label  class="popup-add__field">
+                <label class="popup-add__field">
                   <input
-                  id="profile-title"
-                  name="title"
-                  type="text"
-                  class="popup-add__input popup-add__name"
-                  placeholder="Titulo"
-                  required
-                  minlength="2"
-                  maxlength="30"
-                />
-                <span class="popup-add__error popup-add__error_visible" id="profile-title-error"></span>
+                    id="profile-title"
+                    name="title"
+                    type="text"
+                    class="popup-add__input popup-add__name"
+                    placeholder="Titulo"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                  />
+                  <span
+                    class="popup-add__error popup-add__error_visible"
+                    id="profile-title-error"
+                  ></span>
                 </label>
-               <label  class="popup-add__field">
-                <input
-                  id="profile-url"
-                  name="url"
-                  type="url"
-                  class="popup-add__input popup-add__url"
-                  placeholder="Enlace a la imagen"
-                  required
-                />
+                <label class="popup-add__field">
+                  <input
+                    id="profile-url"
+                    name="url"
+                    type="url"
+                    class="popup-add__input popup-add__url"
+                    placeholder="Enlace a la imagen"
+                    required
+                  />
 
-                <span class="popup-add__error popup-add__error_visible" id="profile-url-error"></span>
-               </label>
+                  <span
+                    class="popup-add__error popup-add__error_visible"
+                    id="profile-url-error"
+                  ></span>
+                </label>
 
                 <button
                   id="button-addinfo"
@@ -180,6 +187,5 @@
       </footer>
     </div>
     <script type="module" src="scripts/index.js"></script>
-    <scrip type="module" src="scripts/validate.js"></script>
   </body>
 </html>

@@ -1,7 +1,5 @@
-import { resetValidation } from "./validation.js";
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
-resetValidation();
 
 import {
   content,
@@ -17,6 +15,36 @@ import {
   datos,
 } from "./utils.js";
 
+const popups = () => {
+  let popupcloses = document.querySelectorAll(".popup-add");
+  let popupclose_image = document.querySelector(".popup-image");
+
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      popupcloses.forEach((popupclose) => {
+        popupclose.classList.add("popup-add_opened");
+      });
+      popupclose_image.classList.add("popup-image_opened");
+    }
+  });
+
+  const allPopups = document.querySelectorAll(".popup-add, .popup-image");
+
+  allPopups.forEach((pop) => {
+    pop.addEventListener("mousedown", (evt) => {
+      if (evt.target === pop) {
+        if (pop.classList.contains("popup-add")) {
+          pop.classList.add("popup-add_opened");
+        }
+        if (pop.classList.contains("popup-image")) {
+          pop.classList.add("popup-image_opened");
+        }
+      }
+    });
+  });
+};
+
+popups();
 const validarProfile = new FormValidator("#edit-profile");
 validarProfile.enableValidation();
 
@@ -72,7 +100,6 @@ function addcard(dato) {
     popup_image.classList.add("popup-image_opened");
   });
 }
-
 // Value
 
 //text
